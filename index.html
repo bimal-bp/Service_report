@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compressor Billing System - September 2025</title>
+    <title>Compressor Billing System</title>
     <style>
         * {
             box-sizing: border-box;
@@ -19,41 +19,41 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             background: white;
-            padding: 30px;
-            border-radius: 12px;
+            padding: 25px;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
             border-bottom: 3px solid #2E8B57;
         }
         
         .header h1 {
             color: #2E8B57;
             margin-bottom: 8px;
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
         
-        .header .date {
+        .header .subtitle {
             color: #666;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 500;
         }
         
         .app-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 25px;
+            margin-bottom: 25px;
         }
         
-        @media (max-width: 1000px) {
+        @media (max-width: 900px) {
             .app-container {
                 grid-template-columns: 1fr;
             }
@@ -61,26 +61,26 @@
         
         .form-section, .history-section {
             background: #f9f9f9;
-            padding: 25px;
-            border-radius: 10px;
+            padding: 20px;
+            border-radius: 8px;
             border: 1px solid #e0e0e0;
         }
         
         .section-title {
             color: #2E8B57;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #e0e0e0;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 600;
             color: #444;
         }
@@ -92,10 +92,10 @@
         
         input, select {
             width: 100%;
-            padding: 12px 15px;
+            padding: 10px 12px;
             border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
+            border-radius: 5px;
+            font-size: 15px;
             transition: all 0.3s;
         }
         
@@ -107,8 +107,8 @@
         
         .row {
             display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
         
         .col {
@@ -117,8 +117,8 @@
         
         .rate-info {
             background-color: #e8f5e9;
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 8px 12px;
+            border-radius: 5px;
             margin-top: 5px;
             font-weight: 600;
             color: #2E8B57;
@@ -126,21 +126,21 @@
         }
         
         .rate-info .rate-value {
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
         
         .calculate-btn {
             background-color: #2E8B57;
             color: white;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border: none;
-            border-radius: 6px;
-            font-size: 18px;
+            border-radius: 5px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             width: 100%;
             transition: background-color 0.3s;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .calculate-btn:hover {
@@ -148,10 +148,10 @@
         }
         
         .result-section {
-            margin-top: 25px;
-            padding: 20px;
+            margin-top: 20px;
+            padding: 15px;
             background-color: #e8f5e9;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid #c8e6c9;
             display: none;
         }
@@ -164,8 +164,8 @@
         .result-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 12px;
-            padding-bottom: 12px;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
             border-bottom: 1px solid #c8e6c9;
         }
         
@@ -175,16 +175,16 @@
         }
         
         .result-value {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #333;
         }
         
         .total-cost {
-            font-size: 1.4em;
+            font-size: 1.3em;
             color: #2E8B57;
             font-weight: bold;
-            margin-top: 10px;
-            padding-top: 15px;
+            margin-top: 8px;
+            padding-top: 12px;
             border-top: 2px solid #2E8B57;
         }
         
@@ -194,17 +194,17 @@
         }
         
         .search-section {
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
             background-color: #f8f9fa;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid #dee2e6;
         }
         
         .search-box {
             display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 8px;
+            margin-bottom: 12px;
         }
         
         .search-box input {
@@ -215,8 +215,8 @@
             background-color: #2196F3;
             color: white;
             border: none;
-            border-radius: 6px;
-            padding: 0 20px;
+            border-radius: 5px;
+            padding: 0 15px;
             cursor: pointer;
             font-weight: 500;
             white-space: nowrap;
@@ -228,9 +228,9 @@
         
         .search-results {
             background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 8px;
             display: none;
         }
         
@@ -242,37 +242,37 @@
         .search-result-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
-            padding-bottom: 10px;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
             border-bottom: 1px solid #c8e6c9;
         }
         
         .search-total {
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #2E8B57;
             font-weight: bold;
-            margin-top: 10px;
-            padding-top: 10px;
+            margin-top: 8px;
+            padding-top: 8px;
             border-top: 2px solid #2E8B57;
         }
         
         .history-controls {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
         
         .history-btn {
-            padding: 10px 15px;
+            padding: 8px 12px;
             background-color: #f1f8e9;
             border: 1px solid #c8e6c9;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: 500;
             transition: all 0.3s;
             flex: 1;
-            min-width: 80px;
+            min-width: 70px;
         }
         
         .history-btn:hover {
@@ -288,21 +288,21 @@
         .history-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.9em;
+            margin-top: 8px;
+            font-size: 0.85em;
         }
         
         .history-table th {
             background-color: #2E8B57;
             color: white;
-            padding: 10px 8px;
+            padding: 8px 6px;
             text-align: left;
             font-weight: 600;
             white-space: nowrap;
         }
         
         .history-table td {
-            padding: 10px 8px;
+            padding: 8px 6px;
             border-bottom: 1px solid #e0e0e0;
         }
         
@@ -312,16 +312,16 @@
         
         .no-data {
             text-align: center;
-            padding: 30px;
+            padding: 25px;
             color: #888;
             font-style: italic;
         }
         
         .total-summary {
             background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
             display: flex;
             justify-content: space-between;
             font-weight: 600;
@@ -331,10 +331,10 @@
             background-color: #f44336;
             color: white;
             border: none;
-            border-radius: 4px;
-            padding: 5px 10px;
+            border-radius: 3px;
+            padding: 4px 8px;
             cursor: pointer;
-            font-size: 0.8em;
+            font-size: 0.75em;
             transition: background-color 0.3s;
         }
         
@@ -344,37 +344,37 @@
         
         .footer {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 15px;
             border-top: 1px solid #e0e0e0;
             color: #777;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
         
         .storage-info {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 15px;
-            padding: 10px 15px;
+            margin-top: 12px;
+            padding: 8px 12px;
             background-color: #f1f8e9;
-            border-radius: 6px;
-            font-size: 0.9em;
+            border-radius: 5px;
+            font-size: 0.85em;
         }
         
         .storage-buttons {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         
         .data-btn {
             background-color: #2196F3;
             color: white;
             border: none;
-            border-radius: 4px;
-            padding: 8px 15px;
+            border-radius: 3px;
+            padding: 6px 12px;
             cursor: pointer;
-            font-size: 0.9em;
+            font-size: 0.85em;
             transition: background-color 0.3s;
         }
         
@@ -411,107 +411,44 @@
         }
         
         .month-summary {
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 25px;
+            padding: 15px;
             background-color: #f5f5f5;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid #ddd;
         }
         
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 12px;
         }
         
         .summary-card {
             background: white;
-            padding: 15px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: 5px;
             border: 1px solid #e0e0e0;
         }
         
         .summary-title {
             color: #2E8B57;
             font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1em;
+            margin-bottom: 8px;
+            font-size: 0.9em;
         }
         
         .summary-value {
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: bold;
             color: #333;
         }
         
         .summary-detail {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: #666;
-            margin-top: 5px;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-        
-        .modal-title {
-            color: #2E8B57;
-            margin-bottom: 20px;
-            font-size: 1.4em;
-        }
-        
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            justify-content: flex-end;
-        }
-        
-        .modal-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        
-        .modal-btn.primary {
-            background-color: #2E8B57;
-            color: white;
-        }
-        
-        .modal-btn.secondary {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        
-        .import-instructions {
-            background-color: #f9f9f9;
-            padding: 15px;
-            border-radius: 6px;
-            margin-top: 15px;
-            font-size: 0.9em;
-            color: #666;
+            margin-top: 4px;
         }
     </style>
 </head>
@@ -519,7 +456,7 @@
     <div class="container">
         <div class="header">
             <h1>COMPRESSOR BILLING SYSTEM</h1>
-            <div class="date">SEPTEMBER 2025 DATA IMPORT & MANAGEMENT</div>
+            <div class="subtitle">Track and Manage Compressor Billing</div>
         </div>
         
         <div class="app-container">
@@ -529,7 +466,7 @@
                 <form id="compressorForm">
                     <div class="form-group">
                         <label for="billDate" class="required">Date</label>
-                        <input type="date" id="billDate" value="2025-09-01" required>
+                        <input type="date" id="billDate" required>
                     </div>
                     
                     <div class="row">
@@ -613,10 +550,9 @@
                     </div>
                     
                     <div class="form-group">
-                        <label>Rate per Foot</label>
-                        <div class="rate-info">
-                            Fixed Rate: <span class="rate-value">₹38.50</span> per foot
-                        </div>
+                        <label for="ratePerFoot">Rate per Foot (₹)</label>
+                        <input type="number" id="ratePerFoot" min="0" step="0.01" 
+                               value="38.50" placeholder="Enter rate per foot">
                     </div>
                     
                     <button type="button" class="calculate-btn" onclick="calculateAndSaveBill()">
@@ -647,7 +583,7 @@
                     </div>
                     <div class="result-item">
                         <span class="result-label">Rate per Foot:</span>
-                        <span id="resultRate" class="result-value">₹38.50</span>
+                        <span id="resultRate" class="result-value"></span>
                     </div>
                     <div class="result-item total-cost">
                         <span class="result-label">Total Compressor Cost:</span>
@@ -675,7 +611,6 @@
                     <button class="history-btn active" onclick="showHistory('today')">Today</button>
                     <button class="history-btn" onclick="showHistory('all')">All Records</button>
                     <button class="history-btn" onclick="showHistory('month')">This Month</button>
-                    <button class="history-btn" onclick="showHistory('september')">September 2025</button>
                 </div>
                 
                 <div class="history-table-container">
@@ -706,8 +641,8 @@
         </div>
         
         <div class="month-summary">
-            <h3 class="section-title">September 2025 Summary</h3>
-            <div class="summary-grid" id="septemberSummary">
+            <h3 class="section-title">Current Month Summary</h3>
+            <div class="summary-grid" id="monthSummary">
                 <!-- Summary cards will be populated here -->
             </div>
         </div>
@@ -715,56 +650,19 @@
         <div class="storage-info">
             <span>Data Management</span>
             <div class="storage-buttons">
-                <button class="data-btn import-btn" onclick="showImportModal()">Import September Data</button>
+                <button class="data-btn import-btn" onclick="document.getElementById('fileInput').click()">Import Data</button>
                 <button class="data-btn export-btn" onclick="exportData()">Export All Data</button>
-                <button class="data-btn clear-storage" onclick="showClearModal()">Clear All Data</button>
+                <button class="data-btn clear-storage" onclick="clearAllData()">Clear All Data</button>
                 <input type="file" id="fileInput" class="file-input" accept=".json" onchange="importFromFile(event)">
             </div>
         </div>
         
         <div class="footer">
-            <p>Compressor Billing System &copy; September 2025 | Fixed Rate: ₹38.50 per foot</p>
-        </div>
-    </div>
-    
-    <!-- Import Modal -->
-    <div id="importModal" class="modal">
-        <div class="modal-content">
-            <h3 class="modal-title">Import September 2025 Data</h3>
-            <p>This will import all compressor billing records from September 2025. Any existing September data will be replaced.</p>
-            
-            <div class="import-instructions">
-                <strong>Data to be imported:</strong><br>
-                • All compressor records from September 2025<br>
-                • Total: 33 compressors with billing data<br>
-                • Fixed rate: ₹38.50 per foot
-            </div>
-            
-            <div class="modal-actions">
-                <button class="modal-btn secondary" onclick="closeModal('importModal')">Cancel</button>
-                <button class="modal-btn primary" onclick="importSeptemberData()">Import Data</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Clear Data Modal -->
-    <div id="clearModal" class="modal">
-        <div class="modal-content">
-            <h3 class="modal-title">Clear All Data</h3>
-            <p>Are you sure you want to delete ALL billing data? This action cannot be undone.</p>
-            <p><strong>Warning:</strong> This will remove all records including imported September 2025 data.</p>
-            
-            <div class="modal-actions">
-                <button class="modal-btn secondary" onclick="closeModal('clearModal')">Cancel</button>
-                <button class="modal-btn primary" onclick="clearAllData()">Clear All Data</button>
-            </div>
+            <p>Compressor Billing System | Simple and Efficient Billing Management</p>
         </div>
     </div>
 
     <script>
-        // Fixed rate per foot
-        const RATE_PER_FOOT = 38.50;
-        
         // Compressor database - mapping tractor numbers to compressor names
         const compressorDatabase = {
             "AP31DM4375": "KUMAR",
@@ -819,7 +717,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadData();
             updateHistoryTable();
-            updateSeptemberSummary();
+            updateMonthSummary();
             
             // Add event listener for tractor number input to auto-fill compressor name
             document.getElementById('tractorNumber').addEventListener('input', function() {
@@ -870,20 +768,21 @@
             const compressorName = document.getElementById('compressorName').value;
             const numberOfHoles = parseInt(document.getElementById('numberOfHoles').value);
             const drillingDepth = parseFloat(document.getElementById('drillingDepth').value);
+            const ratePerFoot = parseFloat(document.getElementById('ratePerFoot').value);
             
             // Validate form
-            if (!date || !tractorNumber || !compressorName || !numberOfHoles || !drillingDepth) {
+            if (!date || !tractorNumber || !compressorName || !numberOfHoles || !drillingDepth || !ratePerFoot) {
                 alert('Please fill in all required fields');
                 return;
             }
             
-            if (numberOfHoles <= 0 || drillingDepth <= 0) {
-                alert('Number of holes and drilling depth must be greater than 0');
+            if (numberOfHoles <= 0 || drillingDepth <= 0 || ratePerFoot <= 0) {
+                alert('Number of holes, drilling depth and rate must be greater than 0');
                 return;
             }
             
             // Calculate total
-            const totalCost = drillingDepth * RATE_PER_FOOT;
+            const totalCost = drillingDepth * ratePerFoot;
             
             // Create bill object
             const bill = {
@@ -893,6 +792,7 @@
                 compressorName: compressorName,
                 numberOfHoles: numberOfHoles,
                 drillingDepth: drillingDepth,
+                ratePerFoot: ratePerFoot,
                 totalCost: parseFloat(totalCost.toFixed(2))
             };
             
@@ -908,13 +808,14 @@
             // Update history table
             updateHistoryTable();
             
-            // Update September summary
-            updateSeptemberSummary();
+            // Update month summary
+            updateMonthSummary();
             
             // Clear form
             document.getElementById('compressorForm').reset();
             document.getElementById('tractorNumber').value = '';
             document.getElementById('compressorName').value = '';
+            document.getElementById('ratePerFoot').value = '38.50';
             
             // Set today's date
             const today = new Date().toISOString().split('T')[0];
@@ -931,6 +832,7 @@
             document.getElementById('resultCompressor').textContent = bill.compressorName;
             document.getElementById('resultHoles').textContent = bill.numberOfHoles;
             document.getElementById('resultDepth').textContent = bill.drillingDepth.toFixed(1) + ' ft';
+            document.getElementById('resultRate').textContent = '₹' + bill.ratePerFoot.toFixed(2);
             document.getElementById('resultTotal').textContent = '₹' + bill.totalCost.toFixed(2);
             
             document.getElementById('resultSection').classList.add('active');
@@ -996,12 +898,6 @@
                         return billDate.getMonth() + 1 === currentMonth && 
                                billDate.getFullYear() === currentYear;
                     });
-                case 'september':
-                    return data.filter(bill => {
-                        const billDate = new Date(bill.date);
-                        return billDate.getMonth() + 1 === 9 && 
-                               billDate.getFullYear() === 2025;
-                    });
                 case 'all':
                 default:
                     return data;
@@ -1028,7 +924,7 @@
                 billingData = billingData.filter(bill => bill.id !== id);
                 saveData();
                 updateHistoryTable();
-                updateSeptemberSummary();
+                updateMonthSummary();
                 alert('Record deleted successfully!');
             }
         }
@@ -1093,23 +989,26 @@
             searchResults.classList.add('active');
         }
         
-        // Update September summary
-        function updateSeptemberSummary() {
-            const septemberSummary = document.getElementById('septemberSummary');
+        // Update month summary
+        function updateMonthSummary() {
+            const monthSummary = document.getElementById('monthSummary');
             
-            // Filter September 2025 data
-            const septemberData = billingData.filter(bill => {
+            // Filter current month data
+            const currentMonth = new Date().getMonth() + 1;
+            const currentYear = new Date().getFullYear();
+            
+            const monthData = billingData.filter(bill => {
                 const billDate = new Date(bill.date);
-                return billDate.getMonth() + 1 === 9 && 
-                       billDate.getFullYear() === 2025;
+                return billDate.getMonth() + 1 === currentMonth && 
+                       billDate.getFullYear() === currentYear;
             });
             
-            if (septemberData.length === 0) {
-                septemberSummary.innerHTML = `
+            if (monthData.length === 0) {
+                monthSummary.innerHTML = `
                     <div class="summary-card">
-                        <div class="summary-title">September 2025 Summary</div>
+                        <div class="summary-title">Current Month Summary</div>
                         <div class="summary-value">No Data</div>
-                        <div class="summary-detail">Import or add September records</div>
+                        <div class="summary-detail">Add billing records for this month</div>
                     </div>
                 `;
                 return;
@@ -1121,7 +1020,7 @@
             let totalHoles = 0;
             let compressorCount = new Set();
             
-            septemberData.forEach(bill => {
+            monthData.forEach(bill => {
                 totalAmount += bill.totalCost;
                 totalDepth += bill.drillingDepth;
                 totalHoles += bill.numberOfHoles;
@@ -1129,16 +1028,16 @@
             });
             
             // Create summary cards
-            septemberSummary.innerHTML = `
+            monthSummary.innerHTML = `
                 <div class="summary-card">
                     <div class="summary-title">Total Compressors</div>
                     <div class="summary-value">${compressorCount.size}</div>
-                    <div class="summary-detail">Active in September</div>
+                    <div class="summary-detail">Active this month</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-title">Total Amount</div>
                     <div class="summary-value">₹${totalAmount.toFixed(2)}</div>
-                    <div class="summary-detail">For September 2025</div>
+                    <div class="summary-detail">For current month</div>
                 </div>
                 <div class="summary-card">
                     <div class="summary-title">Total Drilling Depth</div>
@@ -1148,34 +1047,9 @@
                 <div class="summary-card">
                     <div class="summary-title">Total Holes</div>
                     <div class="summary-value">${totalHoles}</div>
-                    <div class="summary-detail">Drilled in September</div>
+                    <div class="summary-detail">Drilled this month</div>
                 </div>
             `;
-        }
-        
-        
-            // Remove existing September 2025 data
-            billingData = billingData.filter(bill => {
-                const billDate = new Date(bill.date);
-                return !(billDate.getMonth() + 1 === 9 && billDate.getFullYear() === 2025);
-            });
-            
-            // Add new September data
-            september2025Data.forEach(bill => {
-                billingData.unshift(bill);
-            });
-            
-            // Save to localStorage
-            saveData();
-            
-            // Update display
-            updateHistoryTable();
-            updateSeptemberSummary();
-            
-            // Close modal
-            closeModal('importModal');
-            
-            alert('September 2025 data imported successfully!');
         }
         
         // Export data
@@ -1219,7 +1093,7 @@
                         
                         saveData();
                         updateHistoryTable();
-                        updateSeptemberSummary();
+                        updateMonthSummary();
                         
                         alert('Data imported successfully!');
                     } else {
@@ -1238,32 +1112,13 @@
         
         // Clear all data
         function clearAllData() {
-            billingData = [];
-            saveData();
-            updateHistoryTable();
-            updateSeptemberSummary();
-            closeModal('clearModal');
-            alert('All data cleared successfully!');
-        }
-        
-        // Show modal
-        function showModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
-        }
-        
-        // Close modal
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        
-        // Show import modal
-        function showImportModal() {
-            showModal('importModal');
-        }
-        
-        // Show clear modal
-        function showClearModal() {
-            showModal('clearModal');
+            if (confirm('Are you sure you want to delete ALL billing data? This action cannot be undone.')) {
+                billingData = [];
+                saveData();
+                updateHistoryTable();
+                updateMonthSummary();
+                alert('All data cleared successfully!');
+            }
         }
         
         // Format date
