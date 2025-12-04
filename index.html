@@ -9,97 +9,150 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: #f5f5f5;
+            background-color: #f0f2f5;
             padding: 20px;
+            color: #333;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
             background: white;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         
         .header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #4CAF50;
+            border-bottom: 3px solid #2E8B57;
         }
         
         .header h1 {
-            color: #333;
-            margin-bottom: 10px;
+            color: #2E8B57;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
         }
         
         .header .date {
             color: #666;
             font-size: 1.1em;
+            font-weight: 500;
+        }
+        
+        .app-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 900px) {
+            .app-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-section, .history-section {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .section-title {
+            color: #2E8B57;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 1.4rem;
         }
         
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
+            font-weight: 600;
             color: #444;
+        }
+        
+        .required::after {
+            content: " *";
+            color: #e74c3c;
         }
         
         input, select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
         
         input:focus, select:focus {
             outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+            border-color: #2E8B57;
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
         }
         
         .row {
             display: flex;
-            gap: 20px;
-            margin-bottom: 25px;
+            gap: 15px;
+            margin-bottom: 20px;
         }
         
         .col {
             flex: 1;
         }
         
+        .rate-info {
+            background-color: #e8f5e9;
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-top: 5px;
+            font-weight: 600;
+            color: #2E8B57;
+            border-left: 4px solid #2E8B57;
+        }
+        
+        .rate-info .rate-value {
+            font-size: 1.2em;
+        }
+        
         .calculate-btn {
-            background-color: #4CAF50;
+            background-color: #2E8B57;
             color: white;
             padding: 15px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-size: 18px;
+            font-weight: 600;
             cursor: pointer;
             width: 100%;
             transition: background-color 0.3s;
+            margin-top: 10px;
         }
         
         .calculate-btn:hover {
-            background-color: #45a049;
+            background-color: #26734d;
         }
         
         .result-section {
-            margin-top: 30px;
+            margin-top: 25px;
             padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
             display: none;
         }
         
@@ -111,13 +164,13 @@
         .result-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #c8e6c9;
         }
         
         .result-label {
-            font-weight: bold;
+            font-weight: 600;
             color: #555;
         }
         
@@ -127,9 +180,12 @@
         }
         
         .total-cost {
-            font-size: 1.3em;
-            color: #4CAF50;
+            font-size: 1.4em;
+            color: #2E8B57;
             font-weight: bold;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 2px solid #2E8B57;
         }
         
         @keyframes fadeIn {
@@ -137,11 +193,121 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .rate-info {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
+        .history-controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .history-btn {
+            padding: 10px 15px;
+            background-color: #f1f8e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            flex: 1;
+        }
+        
+        .history-btn:hover {
+            background-color: #dcedc8;
+        }
+        
+        .history-btn.active {
+            background-color: #2E8B57;
+            color: white;
+            border-color: #2E8B57;
+        }
+        
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .history-table th {
+            background-color: #2E8B57;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .history-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .history-table tr:hover {
+            background-color: #f1f8e9;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 30px;
+            color: #888;
             font-style: italic;
+        }
+        
+        .total-summary {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+        
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #777;
+            font-size: 0.9em;
+        }
+        
+        .storage-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #f1f8e9;
+            border-radius: 6px;
+            font-size: 0.9em;
+        }
+        
+        .clear-storage {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        
+        .clear-storage:hover {
+            background-color: #f57c00;
         }
     </style>
 </head>
@@ -152,135 +318,188 @@
             <div class="date">MONTH OF OCTOBER - 2025</div>
         </div>
         
-        <form id="compressorForm">
-            <div class="form-group">
-                <label for="billDate">Date</label>
-                <input type="date" id="billDate" value="2025-10-01" required>
+        <div class="app-container">
+            <div class="form-section">
+                <h2 class="section-title">New Billing Entry</h2>
+                
+                <form id="compressorForm">
+                    <div class="form-group">
+                        <label for="billDate" class="required">Date</label>
+                        <input type="date" id="billDate" value="2025-10-01" required>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="tractorNumber" class="required">Tractor Number</label>
+                                <input type="text" id="tractorNumber" list="tractorList" 
+                                       placeholder="Enter Tractor Number" required>
+                                <datalist id="tractorList">
+                                    <!-- Tractor numbers from your data -->
+                                    <option value="AP31DM4375">
+                                    <option value="AP39T2085">
+                                    <option value="AP31EH5415">
+                                    <option value="AP39U6311">
+                                    <option value="AP39AD2185">
+                                    <option value="AP31EL0779">
+                                    <option value="AP26 TF 5271">
+                                    <option value="AP31 1788">
+                                    <option value="AP35TB0821">
+                                    <option value="AP27BS 8679">
+                                    <option value="AP31EQ 5430">
+                                    <option value="AP32AV2679">
+                                    <option value="AP31NEN 5794">
+                                    <option value="AP39CT 1202">
+                                    <option value="AP39WC 1160">
+                                    <option value="AP39 TJ 1024">
+                                    <option value="AP31DM 9316">
+                                    <option value="AP31DM 5813">
+                                    <option value="AP31DM 4362">
+                                    <option value="AP27BS 6692">
+                                    <option value="AP07TC6823">
+                                    <option value="AP39GA 2814">
+                                    <option value="AP37 TF 1293">
+                                    <option value="AP37 TF 3362">
+                                    <option value="AP07TJ1293">
+                                    <option value="AP27UB 6303">
+                                    <option value="AP27CD 2762">
+                                    <option value="AP39 RN 9933">
+                                    <option value="AP31CB2759">
+                                    <option value="AP26BR4476">
+                                    <option value="AP39W2632">
+                                    <option value="AP31TB9631">
+                                    <option value="AP27CB2053">
+                                    <option value="AP39TL 0311">
+                                    <option value="AP39T1609">
+                                    <option value="AP31DT1087">
+                                    <option value="AP31TN0491">
+                                    <option value="AP27TT3215">
+                                    <option value="AP40FD6128">
+                                </datalist>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="compressorName" class="required">Compressor Name</label>
+                                <input type="text" id="compressorName" 
+                                       placeholder="Will auto-fill based on tractor" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="numberOfHoles" class="required">Number of Holes</label>
+                                <input type="number" id="numberOfHoles" min="1" 
+                                       placeholder="Enter number of holes" required>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="drillingDepth" class="required">Drilling Depth (Feet)</label>
+                                <input type="number" id="drillingDepth" min="1" step="0.5" 
+                                       placeholder="Enter drilling depth in feet" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Rate per Foot</label>
+                        <div class="rate-info">
+                            Fixed Rate: <span class="rate-value">₹38.50</span> per foot
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="calculate-btn" onclick="calculateAndSaveBill()">
+                        CALCULATE & SAVE BILL
+                    </button>
+                </form>
+                
+                <div id="resultSection" class="result-section">
+                    <div class="result-item">
+                        <span class="result-label">Date:</span>
+                        <span id="resultDate" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Tractor Number:</span>
+                        <span id="resultTractor" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Compressor Name:</span>
+                        <span id="resultCompressor" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Number of Holes:</span>
+                        <span id="resultHoles" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Drilling Depth:</span>
+                        <span id="resultDepth" class="result-value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Rate per Foot:</span>
+                        <span id="resultRate" class="result-value">₹38.50</span>
+                    </div>
+                    <div class="result-item total-cost">
+                        <span class="result-label">Total Compressor Cost:</span>
+                        <span id="resultTotal" class="result-value"></span>
+                    </div>
+                </div>
             </div>
             
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="tractorNumber">Tractor Number *</label>
-                        <input type="text" id="tractorNumber" list="tractorList" 
-                               placeholder="Enter Tractor Number" required>
-                        <datalist id="tractorList">
-                            <!-- Tractor numbers from your data -->
-                            <option value="AP31DM4375">
-                            <option value="AP39T2085">
-                            <option value="AP31EH5415">
-                            <option value="AP39U6311">
-                            <option value="AP39AD2185">
-                            <option value="AP31EL0779">
-                            <option value="AP26 TF 5271">
-                            <option value="AP31 1788">
-                            <option value="AP35TB0821">
-                            <option value="AP27BS 8679">
-                            <option value="AP31EQ 5430">
-                            <option value="AP32AV2679">
-                            <option value="AP31NEN 5794">
-                            <option value="AP39CT 1202">
-                            <option value="AP39WC 1160">
-                            <option value="AP39 TJ 1024">
-                            <option value="AP31DM 9316">
-                            <option value="AP31DM 5813">
-                            <option value="AP31DM 4362">
-                            <option value="AP27BS 6692">
-                            <option value="AP07TC6823">
-                            <option value="AP39GA 2814">
-                            <option value="AP37 TF 1293">
-                            <option value="AP37 TF 3362">
-                            <option value="AP07TJ1293">
-                            <option value="AP27UB 6303">
-                            <option value="AP27CD 2762">
-                            <option value="AP39 RN 9933">
-                            <option value="AP31CB2759">
-                            <option value="AP26BR4476">
-                            <option value="AP39W2632">
-                            <option value="AP31TB9631">
-                            <option value="AP27CB2053">
-                            <option value="AP39TL 0311">
-                            <option value="AP39T1609">
-                            <option value="AP31DT1087">
-                            <option value="AP31TN0491">
-                            <option value="AP27TT3215">
-                            <option value="AP40FD6128">
-                        </datalist>
-                    </div>
+            <div class="history-section">
+                <h2 class="section-title">Billing History</h2>
+                
+                <div class="history-controls">
+                    <button class="history-btn active" onclick="showHistory('today')">Today</button>
+                    <button class="history-btn" onclick="showHistory('all')">All Records</button>
+                    <button class="history-btn" onclick="showHistory('month')">This Month</button>
                 </div>
                 
-                <div class="col">
-                    <div class="form-group">
-                        <label for="compressorName">Compressor Name *</label>
-                        <input type="text" id="compressorName" 
-                               placeholder="Will auto-fill based on tractor" readonly>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="numberOfHoles">Number of Holes *</label>
-                        <input type="number" id="numberOfHoles" min="1" 
-                               placeholder="Enter number of holes" required>
-                    </div>
+                <div class="history-table-container">
+                    <table class="history-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Tractor</th>
+                                <th>Compressor</th>
+                                <th>Holes</th>
+                                <th>Depth</th>
+                                <th>Amount</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyTableBody">
+                            <!-- History records will be inserted here -->
+                        </tbody>
+                    </table>
+                    <div id="noDataMessage" class="no-data">No records found. Add your first billing entry.</div>
                 </div>
                 
-                <div class="col">
-                    <div class="form-group">
-                        <label for="drillingDepth">Drilling Depth (Feet) *</label>
-                        <input type="number" id="drillingDepth" min="1" step="0.5" 
-                               placeholder="Enter drilling depth in feet" required>
-                    </div>
+                <div class="total-summary">
+                    <span>Total Amount:</span>
+                    <span id="totalSummary">₹0.00</span>
                 </div>
             </div>
-            
-            <div class="form-group">
-                <label for="ratePerFoot">Rate per Foot (₹)</label>
-                <input type="number" id="ratePerFoot" value="55" 
-                       placeholder="Enter rate per foot">
-                <div class="rate-info">Standard rate: ₹55 per foot (adjustable)</div>
-            </div>
-            
-            <button type="button" class="calculate-btn" onclick="calculateBill()">
-                CALCULATE TOTAL COST
-            </button>
-        </form>
+        </div>
         
-        <div id="resultSection" class="result-section">
-            <div class="result-item">
-                <span class="result-label">Date:</span>
-                <span id="resultDate" class="result-value"></span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Tractor Number:</span>
-                <span id="resultTractor" class="result-value"></span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Compressor Name:</span>
-                <span id="resultCompressor" class="result-value"></span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Number of Holes:</span>
-                <span id="resultHoles" class="result-value"></span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Total Drilling Depth:</span>
-                <span id="resultDepth" class="result-value"></span>
-            </div>
-            <div class="result-item">
-                <span class="result-label">Rate per Foot:</span>
-                <span id="resultRate" class="result-value">₹55</span>
-            </div>
-            <div class="result-item total-cost">
-                <span class="result-label">Total Compressor Cost:</span>
-                <span id="resultTotal" class="result-value"></span>
-            </div>
+        <div class="storage-info">
+            <span>Data is stored locally in your browser</span>
+            <button class="clear-storage" onclick="clearAllData()">Clear All Data</button>
+        </div>
+        
+        <div class="footer">
+            <p>Compressor Billing System &copy; October 2025 | Fixed Rate: ₹38.50 per foot</p>
         </div>
     </div>
 
     <script>
+        // Fixed rate per foot
+        const RATE_PER_FOOT = 38.50;
+        
         // Compressor database - mapping tractor numbers to compressor names
         const compressorDatabase = {
             // Column 1
@@ -360,15 +579,22 @@
             }
         });
 
-        // Calculate the bill
-        function calculateBill() {
+        // Set default date to today
+        document.getElementById('billDate').valueAsDate = new Date();
+
+        // Load saved data on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showHistory('today');
+        });
+
+        // Calculate and save bill
+        function calculateAndSaveBill() {
             // Get form values
             const date = document.getElementById('billDate').value;
-            const tractorNumber = document.getElementById('tractorNumber').value;
+            const tractorNumber = document.getElementById('tractorNumber').value.toUpperCase().trim();
             const compressorName = document.getElementById('compressorName').value;
             const numberOfHoles = parseInt(document.getElementById('numberOfHoles').value);
             const drillingDepth = parseFloat(document.getElementById('drillingDepth').value);
-            const ratePerFoot = parseFloat(document.getElementById('ratePerFoot').value);
             
             // Validation
             if (!date || !tractorNumber || !compressorName || !numberOfHoles || !drillingDepth) {
@@ -376,8 +602,18 @@
                 return;
             }
             
+            if (isNaN(numberOfHoles) || numberOfHoles < 1) {
+                alert('Please enter a valid number of holes (minimum 1)');
+                return;
+            }
+            
+            if (isNaN(drillingDepth) || drillingDepth < 1) {
+                alert('Please enter a valid drilling depth (minimum 1 foot)');
+                return;
+            }
+            
             // Calculate total cost
-            const totalCost = drillingDepth * ratePerFoot;
+            const totalCost = drillingDepth * RATE_PER_FOOT;
             
             // Format date
             const formattedDate = new Date(date).toLocaleDateString('en-IN', {
@@ -392,20 +628,159 @@
             document.getElementById('resultCompressor').textContent = compressorName;
             document.getElementById('resultHoles').textContent = numberOfHoles.toLocaleString();
             document.getElementById('resultDepth').textContent = drillingDepth.toFixed(1) + ' feet';
-            document.getElementById('resultRate').textContent = '₹' + ratePerFoot;
+            document.getElementById('resultRate').textContent = '₹' + RATE_PER_FOOT.toFixed(2);
             document.getElementById('resultTotal').textContent = '₹' + totalCost.toFixed(2);
             
             // Show result section
             document.getElementById('resultSection').classList.add('active');
             
+            // Create bill object
+            const bill = {
+                id: Date.now(), // Unique ID based on timestamp
+                date: date,
+                formattedDate: formattedDate,
+                tractorNumber: tractorNumber,
+                compressorName: compressorName,
+                numberOfHoles: numberOfHoles,
+                drillingDepth: drillingDepth,
+                ratePerFoot: RATE_PER_FOOT,
+                totalCost: totalCost,
+                timestamp: new Date().toISOString()
+            };
+            
+            // Save to local storage
+            saveBillToStorage(bill);
+            
+            // Reset form
+            document.getElementById('compressorForm').reset();
+            document.getElementById('compressorName').value = '';
+            
+            // Update history display
+            showHistory('today');
+            
             // Scroll to results
             document.getElementById('resultSection').scrollIntoView({ 
                 behavior: 'smooth' 
             });
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Bill saved successfully!');
+            }, 300);
         }
 
-        // Set default date to today
-        document.getElementById('billDate').valueAsDate = new Date();
+        // Save bill to local storage
+        function saveBillToStorage(bill) {
+            let bills = JSON.parse(localStorage.getItem('compressorBills')) || [];
+            bills.push(bill);
+            localStorage.setItem('compressorBills', JSON.stringify(bills));
+        }
+
+        // Get bills from local storage
+        function getBillsFromStorage() {
+            return JSON.parse(localStorage.getItem('compressorBills')) || [];
+        }
+
+        // Show history based on filter
+        function showHistory(filter) {
+            // Update active button
+            document.querySelectorAll('.history-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            const bills = getBillsFromStorage();
+            const tableBody = document.getElementById('historyTableBody');
+            const noDataMessage = document.getElementById('noDataMessage');
+            
+            // Clear table
+            tableBody.innerHTML = '';
+            
+            // Filter bills
+            let filteredBills = bills;
+            const today = new Date().toISOString().split('T')[0];
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+            
+            if (filter === 'today') {
+                filteredBills = bills.filter(bill => bill.date === today);
+            } else if (filter === 'month') {
+                filteredBills = bills.filter(bill => {
+                    const billDate = new Date(bill.date);
+                    return billDate.getMonth() === currentMonth && 
+                           billDate.getFullYear() === currentYear;
+                });
+            }
+            
+            // Sort by date (newest first)
+            filteredBills.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            // Show/hide no data message
+            if (filteredBills.length === 0) {
+                noDataMessage.style.display = 'block';
+            } else {
+                noDataMessage.style.display = 'none';
+            }
+            
+            // Populate table
+            let totalAmount = 0;
+            filteredBills.forEach(bill => {
+                totalAmount += bill.totalCost;
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${bill.formattedDate}</td>
+                    <td>${bill.tractorNumber}</td>
+                    <td>${bill.compressorName}</td>
+                    <td>${bill.numberOfHoles}</td>
+                    <td>${bill.drillingDepth.toFixed(1)} ft</td>
+                    <td>₹${bill.totalCost.toFixed(2)}</td>
+                    <td><button class="delete-btn" onclick="deleteBill(${bill.id})">Delete</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+            
+            // Update total summary
+            document.getElementById('totalSummary').textContent = `₹${totalAmount.toFixed(2)}`;
+        }
+
+        // Delete a bill
+        function deleteBill(id) {
+            if (!confirm('Are you sure you want to delete this bill?')) {
+                return;
+            }
+            
+            let bills = getBillsFromStorage();
+            bills = bills.filter(bill => bill.id !== id);
+            localStorage.setItem('compressorBills', JSON.stringify(bills));
+            
+            // Refresh history display
+            showHistory('today');
+            
+            // Also refresh the results section if showing
+            const activeFilter = document.querySelector('.history-btn.active').textContent.toLowerCase();
+            if (activeFilter.includes('today')) {
+                showHistory('today');
+            } else if (activeFilter.includes('all')) {
+                showHistory('all');
+            } else {
+                showHistory('month');
+            }
+        }
+
+        // Clear all data
+        function clearAllData() {
+            if (!confirm('Are you sure you want to delete ALL billing data? This action cannot be undone.')) {
+                return;
+            }
+            
+            localStorage.removeItem('compressorBills');
+            document.getElementById('historyTableBody').innerHTML = '';
+            document.getElementById('noDataMessage').style.display = 'block';
+            document.getElementById('totalSummary').textContent = '₹0.00';
+            
+            alert('All data has been cleared.');
+        }
     </script>
 </body>
 </html>
