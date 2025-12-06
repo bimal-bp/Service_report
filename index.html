@@ -450,13 +450,109 @@
             color: #666;
             margin-top: 4px;
         }
+        
+        /* Account Details Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 25px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #2E8B57;
+        }
+        
+        .modal-title {
+            color: #2E8B57;
+            font-size: 1.4em;
+            font-weight: 600;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #666;
+            line-height: 1;
+        }
+        
+        .close-modal:hover {
+            color: #e74c3c;
+        }
+        
+        .account-details {
+            margin-top: 15px;
+        }
+        
+        .account-item {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #2E8B57;
+        }
+        
+        .account-field {
+            display: flex;
+            margin-bottom: 6px;
+        }
+        
+        .account-label {
+            font-weight: 600;
+            min-width: 180px;
+            color: #444;
+        }
+        
+        .account-value {
+            color: #333;
+            flex: 1;
+        }
+        
+        .view-account-btn {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 0.75em;
+            transition: background-color 0.3s;
+            margin-left: 5px;
+        }
+        
+        .view-account-btn:hover {
+            background-color: #0b7dda;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>COMPRESSOR BILLING SYSTEM</h1>
-            <div class="subtitle">Track and Manage Compressor Billing</div>
+            <div class="subtitle">Track and Manage Compressor Billing with Account Details</div>
         </div>
         
         <div class="app-container">
@@ -477,47 +573,42 @@
                                        placeholder="Enter Tractor Number" required>
                                 <datalist id="tractorList">
                                     <!-- Tractor numbers from your data -->
+                                    <option value="AP39CA2814">
+                                    <option value="AP35V5237">
+                                    <option value="AP07AG6505">
+                                    <option value="AP27CD2762">
+                                    <option value="AP31TT3215">
+                                    <option value="AP33CD4892">
                                     <option value="AP31DM4375">
-                                    <option value="AP39T2085">
-                                    <option value="AP31EH5415">
-                                    <option value="AP39U6311">
-                                    <option value="AP39AD2185">
-                                    <option value="AP31EL0779">
-                                    <option value="AP26 TF 5271">
-                                    <option value="AP31 1788">
-                                    <option value="AP35TB0821">
-                                    <option value="AP27BS 8679">
-                                    <option value="AP31EQ 5430">
-                                    <option value="AP32AV2679">
-                                    <option value="AP31NEN 5794">
-                                    <option value="AP39CT 1202">
-                                    <option value="AP39WC 1160">
-                                    <option value="AP39 TJ 1024">
-                                    <option value="AP31DM 9316">
-                                    <option value="AP31DM 5813">
-                                    <option value="AP31DM 4362">
-                                    <option value="AP27BS 6692">
-                                    <option value="AP07TC6823">
-                                    <option value="AP39GA 2814">
-                                    <option value="AP37 TF 1293">
-                                    <option value="AP37 TF 3362">
-                                    <option value="AP07TJ1293">
-                                    <option value="AP27UB 6303">
-                                    <option value="AP27CD 2762">
-                                    <option value="AP39 RN 9933">
-                                    <option value="AP31CB2759">
-                                    <option value="AP26BR4476">
+                                    <option value="AP27CA1788">
+                                    <option value="AP31DM9316">
+                                    <option value="AP39CV1559">
                                     <option value="AP39W2632">
+                                    <option value="AP31EH5415">
+                                    <option value="AP39TT1202">
+                                    <option value="AP39U6311">
+                                    <option value="AP26BR4476">
+                                    <option value="AP27BS8679">
+                                    <option value="AP31EQ5430">
+                                    <option value="AP31DM4362">
+                                    <option value="AP31AV2679">
+                                    <option value="AP31EL0779">
+                                    <option value="TS26T4510">
+                                    <option value="AP39TJ1024">
+                                    <option value="AP27UB6303">
+                                    <option value="AP31EN5794">
+                                    <option value="AP26TF5271">
+                                    <option value="AP31TT2085">
+                                    <option value="AP31CB2759">
+                                    <option value="AP39A4504">
                                     <option value="AP31TB9631">
-                                    <option value="AP27CB2053">
-                                    <option value="AP39TL 0311">
+                                    <option value="AP39DZ8233">
+                                    <option value="AP07TJ1293">
                                     <option value="AP39T1609">
-                                    <option value="AP31DT1087">
-                                    <option value="AP31TN0491">
-                                    <option value="AP27TT3215">
-                                    <option value="AP40FD6128">
-                                    <option value="AP31NG491">
-                                    <option value="AP39J4834">
+                                    <option value="AP39RN9933">
+                                    <option value="AP39LT0311">
+                                    <option value="AP35T80821">
+                                    <option value="AP39AD2185">
                                 </datalist>
                             </div>
                         </div>
@@ -555,9 +646,18 @@
                                value="38.50" placeholder="Enter rate per foot">
                     </div>
                     
-                    <button type="button" class="calculate-btn" onclick="calculateAndSaveBill()">
-                        CALCULATE & SAVE BILL
-                    </button>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="calculate-btn" onclick="calculateAndSaveBill()">
+                                CALCULATE & SAVE BILL
+                            </button>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="calculate-btn" style="background-color: #2196F3;" onclick="showAccountDetails()">
+                                VIEW ACCOUNT DETAILS
+                            </button>
+                        </div>
+                    </div>
                 </form>
                 
                 <div id="resultSection" class="result-section">
@@ -611,6 +711,7 @@
                     <button class="history-btn active" onclick="showHistory('today')">Today</button>
                     <button class="history-btn" onclick="showHistory('all')">All Records</button>
                     <button class="history-btn" onclick="showHistory('month')">This Month</button>
+                    <button class="history-btn" onclick="showCompressorList()">All Compressors</button>
                 </div>
                 
                 <div class="history-table-container">
@@ -658,54 +759,347 @@
         </div>
         
         <div class="footer">
-            <p>Compressor Billing System | Simple and Efficient Billing Management</p>
+            <p>Compressor Billing System | Complete with Account Details Management</p>
+        </div>
+    </div>
+
+    <!-- Account Details Modal -->
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Compressor Account Details</h2>
+                <button class="close-modal" onclick="closeAccountModal()">&times;</button>
+            </div>
+            <div id="accountDetailsContent" class="account-details">
+                <!-- Account details will be populated here -->
+            </div>
         </div>
     </div>
 
     <script>
-        // Compressor database - mapping tractor numbers to compressor names
+        // Comprehensive Compressor database with account details
         const compressorDatabase = {
-            "AP31DM4375": "KUMAR",
-            "AP39T2085": "LAXMANA RAO", 
-            "AP31EH5415": "TRIMURTHU",
-            "AP31NG491": "SURYA RAO",
-            "AP39U6311": "NOOKA RAJU",
-            "AP39AD2185": "MAHESH",
-            "AP31EL0779": "VEERU NAIDU",
-            "AP26 TF 5271": "SURIBABU",
-            "AP31 1788": "SURYA RAO",
-            "AP35TB0821": "VINAY",
-            "AP27BS 8679": "N.SRINU",
-            "AP31EQ 5430": "L.SRINU",
-            "AP32AV2679": "G.VENKATARAO",
-            "AP31NEN 5794": "TARRA RAJU",
-            "AP39CT 1202": "N.APPARAO",
-            "AP39WC 1160": "MPTC MATURU",
-            "AP39 TJ 1024": "RAVI MAHALAXMI",
-            "AP31DM 9316": "G.SRINU",
-            "AP31DM 5813": "KRISHNA",
-            "AP31DM 4362": "KRISHNA",
-            "AP27BS 6692": "BABOJI",
-            "AP07TC6823": "BABOJI",
-            "AP39GA 2814": "ALLAM VASU",
-            "AP37 TF 1293": "HANUMANT RAO",
-            "AP37 TF 3362": "HANUMANT RAO",
-            "AP07TJ1293": "P.ANAND",
-            "AP27UB 6303": "SATYANNARAYANA",
-            "AP27CD 2762": "KATHI SRINU",
-            "AP39 RN 9933": "RAVI RAMESH",
-            "AP31CB2759": "SIVAJI(gunkal lova)",
-            "AP26BR4476": "K.SANYASI NAIDU",
-            "AP39W2632": "K.ANAND",
-            "AP31TB9631": "SURYA NARAYANA",
-            "AP27CB2053": "SURYA NARAYANA/P.ANAND",
-            "AP39TL 0311": "V. SomNaidu/(ADAPA SRINU)",
-            "AP39T1609": "SHIVA-MATHUR",
-            "AP31DT1087": "NOOKU NAIDU",
-            "AP39J4834": "MADHU",
-            "AP31TN0491": "K.RAMA RAO",
-            "AP27TT3215": "J.SHIVA",
-            "AP40FD6128": "ALLU GANESH"
+            "AP39CA2814": {
+                name: "ALLAM VASU",
+                accountNumber: "40988132071",
+                bankName: "STATE BANK OF INDIA",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "CVOPV6966K"
+            },
+            "AP35V5237": {
+                name: "POLINATI VENKATA SRINIVASA RAO",
+                accountNumber: "6086101003124",
+                bankName: "CANARA BANK",
+                branch: "NEAR BELLAM MARKET, ANAKAPALLI",
+                ifscCode: "CNRB0006086",
+                panCard: "ENNPP6015C"
+            },
+            "AP07AG6505": {
+                name: "POLINATI VENKATA SRINIVASA RAO",
+                accountNumber: "6086101003124",
+                bankName: "CANARA BANK",
+                branch: "NEAR BELLAM MARKET, ANAKAPALLI",
+                ifscCode: "CNRB0006086",
+                panCard: "ENNPP6015C"
+            },
+            "AP27CD2762": {
+                name: "KARANAM SRINIVASA RAO",
+                accountNumber: "110150266393",
+                bankName: "CANARA BANK",
+                branch: "NEAR BELLAM MARKET, ANAKAPALLI",
+                ifscCode: "CNRB0006086",
+                panCard: "BSEPR6431D"
+            },
+            "AP31TT3215": {
+                name: "JOMMALA SIVA",
+                accountNumber: "3249509013",
+                bankName: "KOTAK MAHINDRA BANK",
+                branch: "CHINTAVARI STREET ANAKAPALLI",
+                ifscCode: "KKBK0007812",
+                panCard: "BBWPJ8852M"
+            },
+            "AP33CD4892": {
+                name: "JOMMALA SIVA",
+                accountNumber: "3249509013",
+                bankName: "KOTAK MAHINDRA BANK",
+                branch: "CHINTAVARI STREET ANAKAPALLI",
+                ifscCode: "KKBK0007812",
+                panCard: "BBWPJ8852M"
+            },
+            "AP31DM4375": {
+                name: "L. ARUN KUMAR",
+                accountNumber: "053501508399",
+                bankName: "ICICI BANK",
+                branch: "ANAKAPALLI",
+                ifscCode: "ICIC0000535",
+                panCard: "ANIPL8768P"
+            },
+            "AP27CA1788": {
+                name: "GADI LAXMI",
+                accountNumber: "36953130643",
+                bankName: "STATE BANK OF INDIA",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "BVOPL7103H"
+            },
+            "AP31DM9316": {
+                name: "SRINU SREERAMSETTY",
+                accountNumber: "34991974405",
+                bankName: "STATE BANK OF INDIA",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "JDCPS7095R"
+            },
+            "AP39CV1559": {
+                name: "B. SAMUDRU RAJU",
+                accountNumber: "971004023",
+                bankName: "INDIAN BANK",
+                branch: "ANAKAPALLI",
+                ifscCode: "IDIB000A020",
+                panCard: "CGJPB2625R"
+            },
+            "AP39W2632": {
+                name: "KARANAM ANAND (K.ANAND)",
+                accountNumber: "039301000040901",
+                bankName: "INDIAN OVERSEAS BANK",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "IOBA0000393",
+                panCard: "FVGPK7302M"
+            },
+            "AP31EH5415": {
+                name: "PEDDI SETTY TRIMURTHULU",
+                accountNumber: "8038481228",
+                bankName: "IDBI BANK",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "IDIB000A020",
+                panCard: "EBLPP9933F"
+            },
+            "AP39TT1202": {
+                name: "NEETIPALLI APPARAO",
+                accountNumber: "34675754049",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0006338",
+                panCard: "BKEPN3783Q"
+            },
+            "AP39U6311": {
+                name: "KATA NOOKARAJU",
+                accountNumber: "20304516192",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "CGJPK1884R"
+            },
+            "AP26BR4476": {
+                name: "SANYASI NAIDU",
+                accountNumber: "34443923670",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "CMSPN8453Q"
+            },
+            "AP27BS8679": {
+                name: "NAMBARU SRINIVASA RAO",
+                accountNumber: "34002808173",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "AYGPN8019G"
+            },
+            "AP31EQ5430": {
+                name: "LANKA SRINIVASARAO",
+                accountNumber: "20304515950",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "ANDPL4664M"
+            },
+            "AP31DM4362": {
+                name: "NAGULAPALLI KRISHNA",
+                accountNumber: "32379988581",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "AVYPN2276N"
+            },
+            "AP31AV2679": {
+                name: "GADASALA VENKATARAO",
+                accountNumber: "33967733911",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "BTMPG1103L"
+            },
+            "AP31EL0779": {
+                name: "NAMBARU VENKATAPPARAO (VEERU NAIDU)",
+                accountNumber: "33883632995",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "BKEPN3783Q"
+            },
+            "TS26T4510": {
+                name: "CHAPPAGADDA SIVA SAI SANKAR",
+                accountNumber: "039302000002032",
+                bankName: "INDIAN OVERSEAS BANK",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "IOBA0000393",
+                panCard: "BKWPC2193P"
+            },
+            "AP39TJ1024": {
+                name: "RAVI MAHALAXMI DORA",
+                accountNumber: "063110100168824",
+                bankName: "UNION BANK OF INDIA",
+                branch: "WOODPET BRANCH ANAKAPALLI",
+                ifscCode: "UBIN0806315",
+                panCard: "CEAPR2044K"
+            },
+            "AP27UB6303": {
+                name: "SATYANNARAYANA",
+                accountNumber: "30483532930",
+                bankName: "STATE BANK OF INDIA",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN000805",
+                panCard: "DPIPS5590M"
+            },
+            "AP31EN5794": {
+                name: "TARRA APPALARAJU",
+                accountNumber: "50100134897074",
+                bankName: "HDFC BANK",
+                branch: "OPP. SATYANARAYANA THEATRE, MAIN ROAD ANAKAPALLI",
+                ifscCode: "HDFC0001032",
+                panCard: "ALVPT7398A"
+            },
+            "AP26TF5271": {
+                name: "GADASALA SURIBABU",
+                accountNumber: "039302000002030",
+                bankName: "INDIAN OVERSEAS BANK",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "IOBA0000393",
+                panCard: "QGLPS2039Q"
+            },
+            "AP27BS6692": {
+                name: "PEDISETTI BABOJI",
+                accountNumber: "4145340205",
+                bankName: "KOTAK MAHINDRA BANK",
+                branch: "CHINATAVARI STREET ANAKAPALLI",
+                ifscCode: "KKBK0007812",
+                panCard: "FLHPB5792K"
+            },
+            "AP31TT2085": {
+                name: "GADI PADMA (W/O LAXMANA RAO)",
+                accountNumber: "41074777076",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "CYDPG3473L"
+            },
+            "AP31CB2759": {
+                name: "YELAMALA SIVAJI",
+                accountNumber: "1004005003528",
+                bankName: "KANAKA MAHALAXMI CO-OPERATIVE BANK LTD",
+                branch: "AKKAYYAPALEM, VISAKHAPATNAM",
+                ifscCode: "IBKL0150KMC",
+                panCard: "AKOPY6857B"
+            },
+            "AP39A4504": {
+                name: "GURRAM KRISHNARAO",
+                accountNumber: "50100418811812",
+                bankName: "HDFC BANK",
+                branch: "OPP. SATYANARYANA THEATRE, MAIN ROAD ANAKAPALLI",
+                ifscCode: "HDFC0001032",
+                panCard: "CNTPG6055P"
+            },
+            "AP31TB9631": {
+                name: "ISARAPU SURYANARAYANA",
+                accountNumber: "6086101006038",
+                bankName: "CANARA BANK",
+                branch: "RING ROAD, NEAR BELLAM MARKET, ANAKAPALLI",
+                ifscCode: "CNRB0006086",
+                panCard: "AHQP17955M"
+            },
+            "AP39DZ8233": {
+                name: "KUMARI BALLA (P ANAND)",
+                accountNumber: "386602010016453",
+                bankName: "UNION BANK OF INDIA",
+                branch: "TUMPALA, ANAKAPALLI",
+                ifscCode: "UBIN0538663",
+                panCard: "DWYPB3100D"
+            },
+            "AP07TJ1293": {
+                name: "KUMARI BALLA (P ANAND)",
+                accountNumber: "386602010016453",
+                bankName: "UNION BANK OF INDIA",
+                branch: "TUMPALA, ANAKAPALLI",
+                ifscCode: "UBIN0538663",
+                panCard: "DWYPB3100D"
+            },
+            "AP39T1609": {
+                name: "ALLAM VENKATA SIVAJEE",
+                accountNumber: "42081135431",
+                bankName: "STATE BANK OF INDIA",
+                branch: "MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "RLJPS1208H"
+            },
+            "AP39RN9933": {
+                name: "RAAVI SARVALAKSHMI (W/O RAVI RAMESH)",
+                accountNumber: "063112010002232",
+                bankName: "UNION BANK",
+                branch: "ANAKAPALLI",
+                ifscCode: "UBIN0806315",
+                panCard: "QNZPS1493F"
+            },
+            "AP39LT0311": {
+                name: "VASADI V. SHOMNAIDU (ADAPA SRINU)",
+                accountNumber: "96011524622",
+                bankName: "COASTAL LOCAL AREA BANK LTD",
+                branch: "ANKAPALLE",
+                ifscCode: "COAS0000001",
+                panCard: "EZTPR2341H"
+            },
+            "AP35T80821": {
+                name: "SESHAPU SREELATHA (VINAY)",
+                accountNumber: "33209179511",
+                bankName: "STATE BANK OF INDIA",
+                branch: "NEHRU CHOWK, MAIN ROAD ANAKAPALLI",
+                ifscCode: "SBIN0000805",
+                panCard: "LUGPS3440D"
+            },
+            "AP39AD2185": {
+                name: "KARANAM KRISHNA (MAHESH)",
+                accountNumber: "1003104000148191",
+                bankName: "IDBI BANK",
+                branch: "MAIN ROAD NARSINGARAO PETA ANAKAPALLI",
+                ifscCode: "IBKL0001003",
+                panCard: "MQVPK7059L"
+            },
+            // Additional compressors without tractor numbers from your data
+            "JAGARAPU RAMANA": {
+                name: "JAGARAPU RAMANA",
+                accountNumber: "20216163869",
+                bankName: "STATE BANK OF INDIA",
+                branch: "KODURU BRANCH VISAKHAPATNAM",
+                ifscCode: "SBIN0015388",
+                panCard: "ASZPJ0977E"
+            },
+            "KARANAM MAHESWARI": {
+                name: "KARANAM MAHESWARI (HANUMANTHARAO)",
+                accountNumber: "11012XXXXX",
+                bankName: "CANARA BANK",
+                branch: "GAJUWAKA VISHAKAPATNAM",
+                ifscCode: "CNRB0002609",
+                panCard: "IILPM9924G"
+            },
+            "OMMI MODI BABU": {
+                name: "OMMI MODI BABU",
+                accountNumber: "6086101003133",
+                bankName: "CANARA BANK",
+                branch: "RING ROAD NEAR BELLAM MARKET ANAKAPALLI",
+                ifscCode: "CNRB0006086",
+                panCard: "ABEP01294K"
+            }
         };
         
         // Initialize localStorage
@@ -722,9 +1116,9 @@
             // Add event listener for tractor number input to auto-fill compressor name
             document.getElementById('tractorNumber').addEventListener('input', function() {
                 const tractorNumber = this.value.trim().toUpperCase();
-                const compressorName = compressorDatabase[tractorNumber];
-                if (compressorName) {
-                    document.getElementById('compressorName').value = compressorName;
+                const compressorData = compressorDatabase[tractorNumber];
+                if (compressorData) {
+                    document.getElementById('compressorName').value = compressorData.name;
                 } else {
                     document.getElementById('compressorName').value = '';
                 }
@@ -874,7 +1268,10 @@
                     <td>${bill.numberOfHoles}</td>
                     <td>${bill.drillingDepth.toFixed(1)} ft</td>
                     <td>₹${bill.totalCost.toFixed(2)}</td>
-                    <td><button class="delete-btn" onclick="deleteRecord(${bill.id})">Delete</button></td>
+                    <td>
+                        <button class="view-account-btn" onclick="showAccountDetails('${bill.tractorNumber}')">Account</button>
+                        <button class="delete-btn" onclick="deleteRecord(${bill.id})">Delete</button>
+                    </td>
                 `;
                 tableBody.appendChild(row);
             });
@@ -918,6 +1315,12 @@
             updateHistoryTable();
         }
         
+        // Show compressor list
+        function showCompressorList() {
+            const tractorNumber = prompt("Enter Tractor Number (or leave blank for all):");
+            showAccountDetails(tractorNumber);
+        }
+        
         // Delete a record
         function deleteRecord(id) {
             if (confirm('Are you sure you want to delete this record?')) {
@@ -927,6 +1330,120 @@
                 updateMonthSummary();
                 alert('Record deleted successfully!');
             }
+        }
+        
+        // Show account details
+        function showAccountDetails(tractorNumber = null) {
+            const modal = document.getElementById('accountModal');
+            const content = document.getElementById('accountDetailsContent');
+            
+            if (tractorNumber) {
+                // Show specific tractor account
+                const tractorData = compressorDatabase[tractorNumber];
+                if (tractorData) {
+                    content.innerHTML = createAccountDetailsHTML(tractorNumber, tractorData);
+                } else {
+                    content.innerHTML = `<div class="account-item"><p>No account details found for tractor number: ${tractorNumber}</p></div>`;
+                }
+            } else {
+                // Show all compressors
+                content.innerHTML = '<h3>All Compressor Account Details</h3>';
+                
+                // Group compressors by name to avoid duplicates
+                const groupedData = {};
+                
+                Object.keys(compressorDatabase).forEach(tractor => {
+                    const data = compressorDatabase[tractor];
+                    const key = data.name;
+                    
+                    if (!groupedData[key]) {
+                        groupedData[key] = {
+                            tractors: [tractor],
+                            data: data
+                        };
+                    } else {
+                        groupedData[key].tractors.push(tractor);
+                    }
+                });
+                
+                // Display all compressors
+                Object.keys(groupedData).sort().forEach(name => {
+                    const item = groupedData[name];
+                    const tractorList = item.tractors.join(', ');
+                    
+                    content.innerHTML += `
+                        <div class="account-item">
+                            <div class="account-field">
+                                <span class="account-label">Compressor Name:</span>
+                                <span class="account-value">${name}</span>
+                            </div>
+                            <div class="account-field">
+                                <span class="account-label">Tractor Numbers:</span>
+                                <span class="account-value">${tractorList}</span>
+                            </div>
+                            <div class="account-field">
+                                <span class="account-label">Account Number:</span>
+                                <span class="account-value">${item.data.accountNumber}</span>
+                            </div>
+                            <div class="account-field">
+                                <span class="account-label">Bank:</span>
+                                <span class="account-value">${item.data.bankName}</span>
+                            </div>
+                            <div class="account-field">
+                                <span class="account-label">IFSC Code:</span>
+                                <span class="account-value">${item.data.ifscCode}</span>
+                            </div>
+                            <div class="account-field">
+                                <span class="account-label">PAN Card:</span>
+                                <span class="account-value">${item.data.panCard}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            
+            modal.style.display = 'block';
+        }
+        
+        // Create account details HTML
+        function createAccountDetailsHTML(tractorNumber, data) {
+            return `
+                <div class="account-item">
+                    <div class="account-field">
+                        <span class="account-label">Tractor Number:</span>
+                        <span class="account-value">${tractorNumber}</span>
+                    </div>
+                    <div class="account-field">
+                        <span class="account-label">Compressor Name:</span>
+                        <span class="account-value">${data.name}</span>
+                    </div>
+                    <div class="account-field">
+                        <span class="account-label">Account Number:</span>
+                        <span class="account-value">${data.accountNumber}</span>
+                    </div>
+                    <div class="account-field">
+                        <span class="account-label">Bank Name:</span>
+                        <span class="account-value">${data.bankName}</span>
+                    </div>
+                    <div class="account-field">
+                        <span class="account-label">Branch:</span>
+                        <span class="account-value">${data.branch}</span>
+                    </div>
+                    <div class="account-field">
+                        <span class="account-label">IFSC Code:</span>
+                        <span class="account-value">${data.ifscCode}</span>
+                    </div>
+                    <div class="account-field">
+                        <span class="account-label">PAN Card Number:</span>
+                        <span class="account-value">${data.panCard}</span>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Close account modal
+        function closeAccountModal() {
+            document.getElementById('accountModal').style.display = 'none';
         }
         
         // Search records
@@ -1129,6 +1646,14 @@
                 month: '2-digit',
                 year: 'numeric'
             });
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('accountModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
